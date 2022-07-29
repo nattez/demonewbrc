@@ -1,0 +1,171 @@
+
+/*--------------------------------------------------------------
+# Breadcrumbs
+--------------------------------------------------------------*/
+.breadcrumbs {
+  padding: 15px 0;
+  background: rgba(30,30,30,255);
+  margin-top: 90px;
+  color: #fff;
+}
+
+.breadcrumbs a{
+  color: #bfbbbb;
+}
+.breadcrumbs a:hover{
+  color: #fff;
+}
+@media (max-width: 575px) {
+  .breadcrumbs {
+    margin-top: 70px;
+  }
+}
+
+.breadcrumbs h2 {
+  font-size: 24px;
+  font-weight: 400;
+  margin: 0;
+}
+
+.breadcrumbs ol {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+}
+
+.breadcrumbs ol li+li {
+  padding-left: 10px;
+}
+
+.breadcrumbs ol li+li::before {
+  display: inline-block;
+  padding-right: 10px;
+  color: #676775;
+  content: "/";
+}
+
+@media (max-width: 992px) {
+  .breadcrumbs .d-flex {
+    display: block !important;
+  }
+
+  .breadcrumbs h2 {
+    margin-bottom: 10px;
+  }
+
+  .breadcrumbs ol {
+    display: block;
+  }
+
+  .breadcrumbs ol li {
+    display: inline-block;
+  }
+}
+
+/*--------------------------------------------------------------
+# Perusahaan Hero Section
+--------------------------------------------------------------*/
+.hero-per {
+    width: 100%;
+    background: url("../img/brc-tentangkami-bg.jpg") center bottom;
+    background-size: cover;
+    position: relative;
+    min-height: 65vh;
+    padding: 160px 0 60px 0;
+  }
+  
+  .hero-per h2 {
+    font-size: 45px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: var(--color-white);
+    font-family: var(--font-primary);
+  }
+  
+  .hero-per p {
+    color: var(--color-white);
+    font-weight: 400;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 30px;
+  }
+  
+  .hero-per .btn-read-more {
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 12px 36px;
+    border: 1px solid;
+    border-radius: 0;
+    transition: 0.5s;
+    color: #fff;
+    background: transparent;
+  }
+  
+  .hero-per .btn-read-more:hover {
+    background: transparent;
+    box-shadow: 0 4px 28px #fff;
+  }
+  
+  @media (max-width: 640px) {
+    .hero-per {
+      min-height: 70vh;
+    }
+    .hero-per h2 {
+      font-size: 40px;
+    }
+  }
+
+/*--------------------------------------------------------------
+# Tentang Kami Section
+--------------------------------------------------------------*/
+.tentang-kami h2 {
+  font-weight: 600;
+}
+.tentang-kami p {
+  text-align: justify;
+  margin-bottom: -30px;
+}
+
+@media (max-width: 992px) {
+  .tentang-kami h2 {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  .tentang-kami p {  
+    margin: 10px 20px 10px 20px;
+  }
+  .hr1 {
+    margin: -60px 20px 0 20px;
+  }
+}
+
+/*--------------------------------------------------------------
+# Visi Misi Section
+--------------------------------------------------------------*/
+.visi-misi h2 {
+  font-weight: 600;
+}
+.visi-misi p {
+  text-align: justify;
+}
+.visi-misi .hr2 {
+  margin-bottom: 70px;
+}
+
+@media (max-width: 992px) {
+  .visi-misi h2 {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  .visi-misi p {  
+    margin: 10px 20px 10px 20px;
+  }
+  .hr2 {
+    margin: 20px 20px 0 20px;
+  }
+}
