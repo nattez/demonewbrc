@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan DOM</title>
+    <style>
+        html, body{
+            height: 100%;
+        }
+        body{
+            text-align: center;
+        }
+        button{
+            padding: 20px 30px;
+            background-color: rgb(235, 60, 60);
+            font-weight: bold;
+            color: white;
+            margin-top: 50px;
+            cursor: pointer;
+        }
+        .violet{background-color: violet;}
+        .blue{background-color: blue;}
+        .yellow{background-color: yellow;}
+        .green{background-color: green;}
+        .brown{background-color: brown;}
+        .lightblue{background-color: lightblue;}
+        .grey{background-color: grey;}
+        .orange{background-color: orange;}
+        .pink{background-color: pink;}
+        .gaktau{background-color: #FF5733;}
+        .box{
+            width: 20px;
+            height: 20px;
+            margin: 10px auto;
+        }
+        .red{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Bermain dengan warna</h1>
+    <button type="button">Klik Untuk Merubah Warna</button>
+
+    <br><br>
+
+    <div class="box red"></div>
+    <input type="range" name="sMerah" min="0" max="255">
+
+    <div class="box green"></div>
+    <input type="range" name="sHijau" min="0" max="255">
+
+    <div class="box blue"></div>
+    <input type="range" name="sBiru" min="0" max="255">
+
+    <script>
+        // 1. button warna favorit
+        const tombol = document.querySelector('button')
+        tombol.addEventListener('click',function(){
+            document.body.classList.toggle('violet')
+        })
+        
+        // 2. button warna acak
+        const tombol2 = document.createElement('button')
+        const teksTombol2 = document.createTextNode('Klik Untuk Acak Warna')
+        tombol2.append(teksTombol2)
+        tombol.after(tombol2)
+        
+        tombol2.onclick = function(){
+            let r = Math.round(Math.random()*255)
+            let g = Math.round(Math.random()*255)
+            let b = Math.round(Math.random()*255) 
+            document.body.style.backgroundColor = 'rgb(' + r + ',' + g + ',' + b + ')'
+        }
+
+        // 3. slider warna
+        const sMerah = document.querySelector('input[name=sMerah]')
+        const sHijau = document.querySelector('input[name=sHijau]')
+        const sBiru = document.querySelector('input[name=sBiru]')
+        sMerah.addEventListener('input',function(){
+            const r = sMerah.value
+            const g = sHijau.value
+            const b = sBiru.value
+            document.body.style.background = 'rgb(' + r + ',' + g + ',' + b + ')'
+        })
+        sHijau.addEventListener('input',function(){
+            const r = sMerah.value
+            const g = sHijau.value
+            const b = sBiru.value
+            document.body.style.background = 'rgb(' + r + ',' + g + ',' + b + ')'
+        })
+        sBiru.addEventListener('input',function(){
+            const r = sMerah.value
+            const g = sHijau.value
+            const b = sBiru.value
+            document.body.style.background = 'rgb(' + r + ',' + g + ',' + b + ')'
+        })
+
+        // 4. Kursor pengubah warna
+        document.body.addEventListener('mousemove', function(event){
+            let r = Math.round(event.clientX/window.innerWidth*255)
+            let g = Math.round(event.clientY/window.innerWidth*255)
+            document.body.style.background = 'rgb(' + r + ',' + g + ',' + g + ')'
+        })
+    </script>
+</body>
+</html>

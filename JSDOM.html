@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript DOM</title>
+    <style>
+        * { 
+            border: 2px solid #dedede; 
+            padding: 15px; 
+            margin: 15px; 
+        }
+        html { 
+          margin: 0;
+          padding: 0;
+        }
+        body { 
+          max-width: 600px;
+          margin: 30px auto;
+          font-family: sans-serif;
+          color: #333;
+        }
+        #b p{
+            color: green;
+        }
+      </style>
+</head>
+<body>
+    <h1 id="judul">Hello World</h1>
+    <div id="container">
+        <section id="a">
+            <p class="p1">paragraf 1</p>
+            <a href="http://instagram.com/sandhikagalih">Instagram Sandhika Galih</a>
+            <p class="p2">paragraf 2</p>
+            <p class="p3">paragraf 3</p>
+        </section>
+        <section id="b">
+            <p>paragraf 4</p>
+            <ul>    
+                <li>item 1</li>
+                <li>item 2</li>
+                <li>item 3</li>
+            </ul>
+        </section>
+    </div>
+    <!-- 
+        DOM Selection Method
+
+        getElementById() => element
+        getElementsByTagName() => HTMLCollection
+        getElementsByClassName() => HTMLCollection
+        querySelector() => element
+        querySelectorAll() => nodeList
+     -->
+    <script>
+        // DOM Selection
+        //=================
+
+        // // document.getElementById() -> element
+
+        // const judull = document.getElementById('judul')
+        // judull.style.color = 'yellow'
+        // judull.style.backgroundColor = 'grey'
+        // judull.innerHTML = 'Rasikh Khalil Pasha'
+
+        // // document.getElementsByTagName() -> HTMLCollections
+
+        // const pe = document.getElementsByTagName('p')
+        // pe[2].style.color = 'grey'
+
+        // const h1 = document.getElementsByTagName('h1')[0]
+        // h1.style.fontSize = '40px'
+
+        // // document.getElementsByClassName() -> HTMLCollections
+
+        // const p1 = document.getElementsByClassName('p1')
+        // p1[0].innerHTML = 'inid diubah dari js'
+
+        // // document.querySelector() -> element
+
+        // const p4 = document.querySelector('#b p')
+        // p4.style.color = 'blue'
+        // p4.style.fontSize = '34px'
+
+        // const li2 = document.querySelector('ul li:nth-child(2)')
+        // li2.style.backgroundColor = 'yellow'
+
+        // const p = document.querySelector('p')
+        // p.innerHTML = 'kkureng'
+        
+        // // document.querySelectorAll()
+
+        // const pSemua = document.querySelectorAll('p')
+        // pSemua[2].style.backgroundColor = 'green'
+
+        // Mengubah root
+        //=================
+
+        // const sectionB = document.getElementById('b')
+        // const p4 = sectionB.querySelector('p')
+        // p4.style.backgroundColor = 'violet'
+
+        // Manipulasi Element
+        //=================
+
+        // blabla.setAttribute('nama atribut', 'nilainya') -> buat atribut dan nilai, sifatnya menimpa, jadi atribut yang lama bisa hilang jika ada yg baru
+        // blabla.getAttribute('nama atribut') -> mengambil nilai dari atribut tertentu
+        // blabla.removeAttribute('nama atribut') -> menghapus nilai dari atribut tertentu
+        // blabla.classList.add('')
+        // blabla.classList.remove('')
+        // blabla.classList.toggle('') -> kalo belum ada ditambah, kalo udah ada dihapus, return true dan false
+        // blabla.classList.item('') -> nampilin kelas di urutan tertentu, dihitung dari 0
+        // blabla.classList.contains('') -> nanya, ada gk suatu nilai di kelas tertentu, return true dan false
+        // blabla.classList.replace('yg lama', 'yg baru') -> mengganti suatu nilai di kelas tertentu dengan nilai yang lain
+        
+        // Manipulas Node
+        //=================
+
+        // // buat elemen baru
+        // const paragrafBaru = document.createElement('p')
+        // const teksPBaru = document.createTextNode('paragraf baru')
+        // // simpan tulisan ke dalam paragraf
+        // paragrafBaru.appendChild(teksPBaru)
+        // // simpan paragrafBaru di akhrir section A
+        // const sectionA = document.getElementById('a')
+        // sectionA.appendChild(paragrafBaru)
+        
+        
+        // const liBaru = document.createElement('li')
+        // const teksLiBaru = document.createTextNode('item baru')
+        // liBaru.appendChild(teksLiBaru)
+        // const ul = document.querySelector('ul')
+        // const li2 = ul.querySelector('li:nth-child(2)')
+        // ul.insertBefore(liBaru,li2)
+
+
+        // const link = document.getElementsByTagName('a')[0]
+        // sectionA.removeChild(link)
+        
+
+        // const p4 = document.querySelector('#b p')
+        // const sectionB = document.getElementById('b')   
+        // const h2Baru = document.createElement('h2')
+        // const teksh2Baru = document.createTextNode('kocak geming')
+        // h2Baru.appendChild(teksh2Baru)
+        // sectionB.replaceChild(h2Baru,p4)
+
+        // method baru
+    //-----------------
+        
+        // parentNode.append()
+        // parentNode.prepend()
+        // childNode.before()
+        // childNode.after()
+        // childNode.remove()
+        // childNode.replaceWith()
+        
+        // Events
+        //=================
+
+        // const p2 = document.querySelector('.p2')
+        // function ubahWarna(){
+        //     p2.style.backgroundColor = 'yellow'
+        // }
+        // const p3 = document.querySelector('.p3')
+        // p3.onclick = ubahWarna        
+        
+        // const p4 = document.querySelector('#b p')
+        // p4.addEventListener('click',function(){
+
+        //     const liBaru = document.createElement('li')
+        //     const teksLiBaru = document.createTextNode('item baru')
+        //     liBaru.append(teksLiBaru)
+        //     const ul = document.querySelector('ul')
+        //     ul.append(liBaru)
+
+        // })
+        
+        // p3.onclick = function(){
+        //     p3.style.backgroundColor = 'red'
+        // }
+
+        // p3.onclick = function(){
+        //     p3.style.color = 'green'
+        // }
+        // --> events handler saling menimpa
+
+        // p3.addEventListener('mousemove',function(){
+        //     p3.style.backgroundColor = 'red'
+        // })
+
+        // p3.addEventListener('mouseleave',function(){
+        //     p3.style.backgroundColor = 'white'
+        // })
+        // --> event listener saling mendukung
+        let h1 = document.querySelector('h1')
+        let imguser = document.createElement('img')
+        imguser.setAttribute('src','gunting.png')
+        h1.after(imguser)
+
+
+        </script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            line-height: 0;
+            background-color: aqua;
+        }
+        .container{
+            margin: 20px auto;
+            border: 5px solid white;
+            width: 600px;
+            overflow: auto;
+            
+            
+        }
+        .jumbo{
+            width: 600px;
+            cursor: default;
+        }
+        img{
+            width: 200px;
+            border: 2px solid white;
+            box-sizing: border-box;
+            margin: 0;
+            float: left;
+
+        }
+        .container > img:hover{
+            opacity: 0.5;
+            cursor: pointer;
+        }
+        .animasi{
+            animation: animasimasuk 1s forwards;
+        }
+        @keyframes animasimasuk{
+            from{
+                opacity: 0.5;
+            }
+            to{
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div><img class ="jumbo" src="img/1.jpg"></div>
+        <img class="biasa" src="img/1.jpg">
+        <img class="biasa" src="img/2.jpg">
+        <img class="biasa" src="img/3.jpg">
+        <img class="biasa" src="img/4.jpg">
+        <img class="biasa" src="img/5.jpg">
+        <img class="biasa" src="img/6.jpg">
+        
+    </div>
+<script>
+    const container = document.querySelector('.container')
+    const jumbo = document.querySelector('.jumbo')
+    const imgs = document.querySelectorAll('.container > img')
+    imgs.forEach(function(img){
+        
+        img.addEventListener('click', function(e){    
+            for(let i = 0;i < 6;i++){
+                imgs[i].style.opacity = '1'
+            }
+            if(img.className == 'biasa'){
+                img.style.opacity = '0.5'
+                let attr = img.getAttribute('src') 
+                jumbo.setAttribute('src', attr)
+                jumbo.classList.add('animasi')
+                setTimeout(function(){
+                    jumbo.classList.remove('animasi')
+                }, 1000);
+            }
+            
+        })
+        img.addEventListener('mouseover', function(){
+            for(let i = 0;i < 6;i++){
+                imgs[i].style.opacity = '1'
+            }
+            if(img.className == 'biasa'){
+                img.style.opacity = '0.5'
+            }
+        })
+    });
+    // container.addEventListener('click', function(e){
+    //     if(e.target.src = )
+    // })
+</script>
+</body>
+</html>
