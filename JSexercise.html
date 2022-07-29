@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Exercise</title>
+</head>
+<body>
+    <!-- 
+        1. OUTPUT:
+            Today is : Tuesday.
+            Current time is : 10 PM : 30 : 38
+     -->
+    <!-- <p></p>
+
+    <!-- 
+        2. Print Window
+
+        <p>print the curret page</p>
+        <button>Print Window</button> 
+    -->
+    <!-- 
+        3. OUTUPUT:
+
+            01-09-2018
+            01/09/2018
+            09-01-2018
+            09/01/2018
+     -->
+<script>
+    // Soal 1
+    // const waktu = new Date()
+    // const hari = waktu.getDay()
+    // const hari2 = ['senin','selasa','rab','kamis','jum\'at','sabtu','minggu']
+    // const hariini = hari2[hari+1]
+    // let jam = waktu.getHours()
+    // const menit = waktu.getMinutes()
+    // const detik = waktu.getSeconds()
+    // jam = (jam >= 12) ? jam - 12 : jam
+    // const tambahan = (jam >= 12) ? 'PM' : 'AM'
+    // console.log('Today is : ' + hariini)
+    // console.log('Current time is : ' + jam + ' ' + tambahan + " : " + menit + " : " + detik)
+
+    // Soal 2
+    // let tombol = document.querySelector('button')
+    // tombol.onclick = function printWindow(){
+    //     window.print()
+    // }
+
+    // Soal 3
+    let waktu = new Date()
+    let tgl = waktu.getDay()
+    let bulan = waktu.getMonth()
+    let tahun = waktu.getFullYear()
+
+    tgl = (tgl < 10)? '0' + tgl : tgl
+    bulan = (bulan < 10)? '0' + bulan : bulan
+
+    console.log(tgl + '-' + bulan + '-' + tahun)
+    console.log(tgl + '/' + bulan + '/' + tahun)
+    console.log(bulan + '-' + tgl + '-' + tahun)
+    console.log(bulan + '/' + tgl + '/' + tahun)
+    
+</script>
+</body>
+</html>
